@@ -1,0 +1,26 @@
+# Ignorar arquivos gerados pela compilação TypeScript
+dist/
+
+# Ignorar arquivos de dependências
+node_modules/
+
+# Ignorar arquivos de configuração do editor
+.vscode/
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos de build
+build/
+
+# Ignorar arquivos temporários
+.tmp/
+
+# Ignorar arquivos de cache
+.cache/
+
+# Ignorar arquivos de teste
+__tests__/
+
+# Ignorar arquivos de ambiente
+.env
