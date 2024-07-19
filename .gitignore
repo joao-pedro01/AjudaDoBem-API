@@ -24,3 +24,5 @@ __tests__/
 
 # Ignorar arquivos de ambiente
 .env
+
+uploads/*

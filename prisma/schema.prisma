@@ -13,8 +13,45 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id        Int      @id @default(autoincrement())
-  name      String
-  email     String   @unique
+model user {
+  id_user         Int            @id @default(autoincrement())
+  id_address_user Int?
+  name_user       String
+  email_user      String         @unique
+  password_user   String
+  cpf_user        String         @unique
+  birth_date_user DateTime
+  phone_user      String
+  avatar_user     String
+  created_at_user DateTime       @default(now())
+  updated_at_user DateTime       @updatedAt
+  fk_user_address user_address[]
+}
+
+model address {
+  id_address           Int            @id @default(autoincrement())
+  zip_code_address     String
+  street_address       String
+  neighborhood_address String
+  complement_address   String
+  city_address         String
+  state_address        String         @db.VarChar(2)
+  created_at_address   DateTime       @default(now())
+  updated_at_address   DateTime       @updatedAt
+  fk_user_address      user_address[]
+}
+
+model user_address {
+  id_user_address         Int
+  id_user                 Int
+  id_address              Int
+  number_user_address     Int
+  complement_user_address String
+  created_at              DateTime @default(now())
+  updated_at              DateTime @updatedAt
+
+  fk_user_address user    @relation(fields: [id_user], references: [id_user])
+  fk_address_user address @relation(fields: [id_address], references: [id_address])
+
+  @@id([id_user, id_address])
 }
