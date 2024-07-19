@@ -42,7 +42,6 @@ export async function createUser(req: any, res: any) {
         }
     */
     const errors = validationResult(req);
-    console.log('teste');
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() })
     }

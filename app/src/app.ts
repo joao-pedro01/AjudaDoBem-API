@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import routes from "./routes/index";
 import path from 'path';
-console.log('teste')
 const app = express();
 
 //Removendo o x-powered-by por segurança
